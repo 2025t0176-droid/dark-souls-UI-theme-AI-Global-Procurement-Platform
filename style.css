@@ -1,0 +1,403 @@
+/* 1. GLOBAL SETUP & BASE DARK SOULS INFUSED THEME */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: transparent;
+    min-height: 100vh;
+    overflow-x: hidden; /* Changed from overflow: hidden to overflow-x: hidden */
+}
+
+/* Background overlay forces sharp readability */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: transparent;
+    z-index: 0;
+    pointer-events: none;
+}
+
+nav, header, section, footer, div {
+    background-color: transparent;
+}
+
+nav, header, section, footer {
+    position: relative;
+    z-index: 1;
+}
+
+/* --- NAVIGATION BAR --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 4rem;
+    border-bottom: 1px solid rgba(140, 125, 112, 0.15);
+    background: rgba(7, 5, 4, 0.2) !important;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.logo {
+    font-family: 'Cinzel', serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    letter-spacing: 0.2rem;
+    color: #b32424;
+    text-transform: uppercase;
+}
+
+.logo span {
+    color: #f0e6d2;
+}
+
+.nav-links a {
+    color: #8c7d70;
+    text-decoration: none;
+    margin: 0 1.5rem;
+    font-size: 0.85rem;
+    letter-spacing: 0.15rem;
+    text-transform: uppercase;
+    transition: color 0.4s, text-shadow 0.4s;
+}
+
+.nav-links a:hover {
+    color: #f0e6d2;
+    text-shadow: 0 0 10px rgba(240, 230, 210, 0.5);
+}
+
+/* --- LOG IN / REGISTER BUTTON INTERACTION --- */
+.nav-auth .btn-secondary {
+    font-family: 'Cinzel', serif;
+    background: transparent;
+    border: 1px solid transparent;
+    color: #8c7d70;
+    padding: 0.6rem 1.5rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.1rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    box-shadow: 0 0px 0px rgba(0,0,0,0);
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-secondary:hover {
+    color: #f0e6d2;
+    border-color: #5a4a42;
+    background: rgba(140, 125, 112, 0.05);
+    transform: translateY(-1px);
+}
+
+.btn-primary {
+    font-family: 'Cinzel', serif;
+    background: transparent;
+    border: 1px solid #5a4a42;
+    color: #d1c2a5;
+    padding: 0.6rem 1.8rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.1rem;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.btn-primary:hover {
+    background: rgba(179, 36, 36, 0.12);
+    border-color: #b32424;
+    color: #ffffff;
+    box-shadow: 0 0 15px rgba(179, 36, 36, 0.35);
+    transform: translateY(-1px);
+}
+
+/* --- MONOLITHIC HERO LAYOUT --- */
+.hero-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 10rem 2rem 8rem 2rem;
+}
+
+.badge {
+    background: rgba(179, 36, 36, 0.07) !important;
+    border: 1px solid rgba(179, 36, 36, 0.2) !important;
+    color: #b32424;
+    font-family: 'Cinzel', serif;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.2rem;
+    padding: 0.4rem 1.2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 0 15px rgba(179,36,36,0.05);
+}
+
+.hero-section h1 {
+    font-family: 'Cinzel', serif;
+    font-size: 3.5rem;
+    font-weight: 400;
+    letter-spacing: 0.4rem;
+    line-height: 1.2;
+    text-transform: uppercase;
+    color: #f0e6d2;
+    text-shadow: 0 0px 30px rgba(7,5,4,0.8);
+}
+
+.hero-section p {
+    color: #8c7d70;
+    font-size: 1.1rem;
+    max-width: 650px;
+    margin-top: 1.5rem;
+    margin-bottom: 3rem;
+    line-height: 1.8;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+/* --- FEATURES OVERVIEW GRID --- */
+.features-section {
+    padding: 6rem 4rem;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.section-header h2 {
+    font-family: 'Cinzel', serif;
+    font-size: 2rem;
+    font-weight: 400;
+    letter-spacing: 0.3rem;
+    color: #f0e6d2;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+.section-header p {
+    color: #8c7d70;
+    font-size: 1rem;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+}
+
+.feature-card {
+    background: linear-gradient(145deg, rgba(21, 13, 10, 0.4), rgba(7, 5, 4, 0.6)) !important;
+    border: 1px solid rgba(140, 125, 112, 0.12) !important;
+    border-radius: 0px;
+    padding: 3rem;
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.feature-card:hover {
+    border-color: rgba(179, 36, 36, 0.45) !important;
+    box-shadow: 0 15px 40px rgba(7, 5, 4, 0.8), 0 0 25px rgba(179, 36, 36, 0.1);
+    transform: translateY(-4px);
+} 
+
+.card-icon {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+    filter: drop-shadow(0 2px 8px rgba(179,36,36,0.2));
+}
+
+.feature-card h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 1.25rem;
+    color: #f0e6d2;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+.feature-card p {
+    color: #8c7d70;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+}
+
+.learn-more {
+    font-family: 'Cinzel', serif;
+    color: #b32424;
+    text-decoration: none;
+    font-size: 0.8rem;
+    letter-spacing: 0.15rem;
+    text-transform: uppercase;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+.learn-more:hover {
+    color: #f0e6d2;
+    text-shadow: 0 0 8px rgba(240, 230, 210, 0.4);
+}
+
+/* --- ANIMATION CANVAS BACKDROP LAYER --- */
+#bg-network-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    pointer-events: none;
+    background: #000000;
+}
+/* Forces all structural boxes and text sections to be transparent so background sparks are visible */
+main, section, header, .hero-section, .features-section, .features-grid, .navbar {
+    background: transparent !important;
+    background-color: transparent !important;
+}
+
+/* --- FIX AND CENTER SCENARIOS SECTION --- */
+.scenarios-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr) !important; /* Forces 2 columns like your sample */
+    gap: 2.5rem;
+    max-width: 1200px;
+    margin: 4rem auto !important; /* Centers the grid container on the screen */
+    padding: 0 2rem;
+}
+
+/* Turns text white and builds dark framed cards for your scenario boxes */
+.scenario-card, [class*="card-"] {
+    background: linear-gradient(145deg, rgba(21, 13, 10, 0.4), rgba(7, 5, 4, 0.6)) !important;
+    border: 1px solid rgba(140, 125, 112, 0.15) !important;
+    padding: 2.5rem !important;
+    color: #f0e6d2 !important; /* Dark Souls bone-white text color */
+}
+
+/* Ensures titles inside scenarios stand out sharply */
+.scenario-card h3, .scenario-card h4, .scenario-card div[class*="title"] {
+    color: #ffffff !important;
+    font-family: 'Cinzel', serif;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+}
+
+/* Fixes any remaining gray/blue description text links inside the grids */
+.scenario-card p, .scenario-card span, .scenario-card li {
+    color: #8c7d70 !important; /* Soft grey text */
+    line-height: 1.7 !important;
+    font-size: 0.95rem !important;
+}
+
+/* --- CENTER THE SUPPLIER FORMS SECTION --- */
+.supplier-container, .form-section, [id*="supplier"], [class*="form-"] {
+    max-width: 1100px;
+    margin: 6rem auto !important; /* Perfectly centers your application forms in the middle */
+    padding: 3rem;
+    background: rgba(7, 5, 4, 0.5) !important;
+    border: 1px solid rgba(140, 125, 112, 0.12);
+    color: #f0e6d2 !important;
+}
+
+/* Style form text inputs so they aren't hidden */
+input, textarea, select {
+    background: rgba(0, 0, 0, 0.6) !important;
+    border: 1px solid #5a4a42 !important;
+    color: #ffffff !important;
+    padding: 0.8rem !important;
+}
+/* --- FIXES THE BLACK TEXT NEXT TO THE SUPPLIER BUTTON --- */
+.supplier-network-section, 
+.supplier-network-section h2, 
+.supplier-network-section p, 
+.supplier-network-section div,
+.supplier-network-section ul,
+.supplier-network-section li {
+    color: #ffffff !important; /* Turns all the text pure white */
+}
+
+/* Fallback fix in case your section has a different class name */
+h2:has(+ p + ul), 
+h2:has(+ p + ul) + p, 
+h2:has(+ p + ul) + p + ul li {
+    color: #ffffff !important;
+}
+
+/* Targets the specific text blocks based on your HTML structure layout */
+div[class*="supplier"] h2,
+div[class*="supplier"] p,
+div[class*="supplier"] li {
+    color: #ffffff !important;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Styles the checkmark list lines slightly softer bone-white so it reads easily */
+div[class*="supplier"] li, 
+.supplier-network-section li {
+    color: #d1c2a5 !important; /* Subtle bone-white to match Dark Souls elements */
+    list-style: none; /* Clears default bullet points if any exist */
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+}
+/* =======================================================
+   DARK SOULS CRITICAL FIXED OVERRIDE SYSTEM
+   ======================================================= */
+
+/* 1. FORCE ABSOLUTELY ALL INNER PARAGRAPHS, LINKS, LISTS, AND SPANS TO CENTER AT ALL COSTS */
+main *, 
+section *, 
+div *, 
+p, 
+li, 
+span, 
+a, 
+h3, 
+h4 {
+    display: block !important;       /* Forces them onto their own line */
+    text-align: center !important;   /* Centers the text characters exactly in the middle */
+    margin-left: auto !important;    /* Centers the bounding box box layout */
+    margin-right: auto !important;   /* Centers the bounding box box layout */
+    width: 100% !important;          /* Expands the field width so text-align can center it */
+    max-width: 750px !important;     /* Prevents it from spreading out too wide */
+    position: relative !important;   
+    left: 0 !important;              /* Wipes out any negative or left positioning pulls */
+    transform: none !important;
+}
+
+/* 2. FORCE THE COLORS TO BE RADIANT THEMED WHITE OVER BLACK LAYERS */
+main *, 
+section *, 
+div *, 
+p, 
+li, 
+span, 
+h2, 
+h3, 
+h4 {
+    color: #ffffff !important;       /* Converts all invisible black words to pure white */
+    list-style: none !important;     /* Eliminates stray left side bullet circles */
+    list-style-type: none !important;
+}
+
+/* 3. Soft cinematic bone-gray tint for the description block paragraphs */
+p, 
+li {
+    color: #d1c2a5 !important;
+    margin-top: 0.4rem !important;   /* Tightens description right under its header */
+    margin-bottom: 2rem !important;  /* Generates elegant spacing between complete steps */
+}
